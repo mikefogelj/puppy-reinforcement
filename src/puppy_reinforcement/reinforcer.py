@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Puppy Reinforcement Add-on for Anki
+# Kitty Reinforcement Add-on for Anki
 #
 # Copyright (C) 2016-2020  Aristotelis P. <https://glutanimate.com/>
 # Copyright (C) 2019-2020  zjosua <https://github.com/zjosua>
@@ -44,7 +44,7 @@ from .libaddon.anki.configmanager import ConfigManager
 from typing import List
 
 
-class PuppyReinforcer:
+class KittyReinforcer:
 
     _extensions = re.compile(r"\.(jpg|jpeg|png|bmp|gif)$")
 

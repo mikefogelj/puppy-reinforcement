@@ -52,8 +52,8 @@ class ADDON(object):
     Property names need to be all-uppercase with no leading underscores
     """
 
-    NAME = "Puppy Reinforcement"
-    MODULE = "puppy_reinforcement"
+    NAME = "Kitty Reinforcement"
+    MODULE = "kitty_reinforcement"
     ID = "1722658993"
     VERSION = __version__
     LICENSE = "GNU AGPLv3"

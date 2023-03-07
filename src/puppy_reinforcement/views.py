@@ -35,18 +35,18 @@ from aqt.addcards import AddCards
 from aqt.reviewer import Reviewer
 
 from .config import config
-from .reinforcer import PuppyReinforcer
+from .reinforcer import KittyReinforcer
 
 from typing import Any
 
 
-def initializeViews(puppy_reinforcer: PuppyReinforcer):
+def initializeViews(kittyy_reinforcer: KittyReinforcer):
     try:
         from aqt.gui_hooks import reviewer_did_answer_card, add_cards_did_add_note
 
-        reviewer_did_answer_card.append(puppy_reinforcer.showDog)
+        reviewer_did_answer_card.append(kitty_reinforcer.showDog)
         if config["local"]["count_adding"]:
-            add_cards_did_add_note.append(puppy_reinforcer.showDog)
+            add_cards_did_add_note.append(kitty_reinforcer.showDog)
 
     except (ImportError, ModuleNotFoundError):  # Anki < 2.1.20
         # TODO: Drop monkey-patches in the future
@@ -59,12 +59,12 @@ def initializeViews(puppy_reinforcer: PuppyReinforcer):
             if self.mw.col.sched.answerButtons(self.card) < ease:
                 return
             _old(self, ease)
-            puppy_reinforcer.showDog()
+            kitty_reinforcer.showDog()
 
         def myAddNote(self, note, _old):
             ret = _old(self, note)
             if ret:
-                puppy_reinforcer.showDog()
+                kitty_reinforcer.showDog()
             return ret
 
         Reviewer._answerCard = wrap(Reviewer._answerCard, _myAnswerCard, "around")

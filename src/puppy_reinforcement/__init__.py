@@ -117,11 +117,11 @@ def initializeAddon():
     from .libaddon.consts import setAddonProperties
     from .config import config
     from .views import initializeViews
-    from .reinforcer import PuppyReinforcer
+    from .reinforcer import KittyReinforcer
 
     setAddonProperties(ADDON)
 
-    mw._puppy_reinforcer = PuppyReinforcer(mw, config)
+    mw._puppy_reinforcer = KittyReinforcer(mw, config)
 
     initializeViews(mw._puppy_reinforcer)
 
